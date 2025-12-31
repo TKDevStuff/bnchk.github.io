@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>BNCHK ⚡ BLACK CAT ENERGY</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <style>
+    :root {
+      --neon-purple: #a855f7;
+      --neon-blue: #22d3ee;
+      --dark-bg: #050507;
+    }
+
+    * {
+      box-sizing: border-box;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+
+    body {
+      margin: 0;
+      background: radial-gradient(circle at top, #111 0%, var(--dark-bg) 60%);
+      color: white;
+      overflow-x: hidden;
+    }
+
+    header {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 2rem;
+    }
+
+    h1 {
+      font-size: clamp(3rem, 7vw, 6rem);
+      background: linear-gradient(90deg, var(--neon-purple), var(--neon-blue));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      text-shadow: 0 0 30px rgba(168, 85, 247, 0.4);
+      margin: 0;
+    }
+
+    h2 {
+      font-weight: 300;
+      letter-spacing: 2px;
+      opacity: 0.9;
+    }
+
+    .glow-box {
+      border: 2px solid var(--neon-purple);
+      box-shadow: 0 0 25px rgba(168, 85, 247, 0.4);
+      border-radius: 16px;
+      padding: 2rem;
+      margin: 2rem auto;
+      max-width: 900px;
+      background: rgba(10, 10, 20, 0.6);
+    }
+
+    .cats {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+      gap: 1.5rem;
+      margin-top: 2rem;
+    }
+
+    .cat-card {
+      background: linear-gradient(135deg, #111, #1a1a2e);
+      border-radius: 20px;
+      padding: 1.5rem;
+      text-align: center;
+      transition: transform 0.3s, box-shadow 0.3s;
+      box-shadow: 0 0 15px rgba(34, 211, 238, 0.2);
+    }
+
+    .cat-card:hover {
+      transform: translateY(-10px) scale(1.05);
+      box-shadow: 0 0 35px rgba(34, 211, 238, 0.6);
+    }
+
+    .cat-emoji {
+      font-size: 3rem;
+    }
+
+    button {
+      margin-top: 2rem;
+      padding: 1rem 2rem;
+      font-size: 1.1rem;
+      border: none;
+      border-radius: 999px;
+      background: linear-gradient(90deg, var(--neon-purple), var(--neon-blue));
+      color: black;
+      font-weight: bold;
+      cursor: pointer;
+      box-shadow: 0 0 30px rgba(168, 85, 247, 0.6);
+      transition: transform 0.2s;
+    }
+
+    button:hover {
+      transform: scale(1.1);
+    }
+
+    footer {
+      text-align: center;
+      padding: 2rem;
+      opacity: 0.6;
+      font-size: 0.9rem;
+    }
+
+    .spark {
+      position: fixed;
+      pointer-events: none;
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: var(--neon-blue);
+      animation: fade 1s forwards;
+    }
+
+    @keyframes fade {
+      to {
+        transform: translateY(-40px);
+        opacity: 0;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <header>
+    <h1>BNCHK</h1>
+    <h2>⚡ ULTRAMEGA BLACK CAT ENJOYER ⚡</h2>
+
+    <div class="glow-box">
+      <p>
+        Bnchk is not just a person.  
+        Bnchk is a <strong>vibe</strong>.  
+        A being powered by darkness, mystery, and an elite appreciation for
+        <strong>black cats</strong>.
+      </p>
+
+      <p>
+        Black cats are sleek.  
+        Black cats are chaotic.  
+        Black cats are <em>legendary</em>.
+      </p>
+    </div>
+
+    <button onclick="summonCats()">SUMMON CAT ENERGY</button>
+  </header>
+
+  <section class="glow-box">
+    <h2>WHY BNCHK LOVES BLACK CATS</h2>
+
+    <div class="cats">
+      <div class="cat-card">
+        <div class="cat-emoji">🐈‍⬛</div>
+        <p>Maximum mystery</p>
+      </div>
+
+      <div class="cat-card">
+        <div class="cat-emoji">🌑</div>
+        <p>Night-mode perfection</p>
+      </div>
+
+      <div class="cat-card">
+        <div class="cat-emoji">⚡</div>
+        <p>Chaotic energy</p>
+      </div>
+
+      <div class="cat-card">
+        <div class="cat-emoji">🖤</div>
+        <p>Pure aesthetic</p>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    © BNCHK • BLACK CAT SUPREMACY • 100% COOL
+  </footer>
+
+  <script>
+    function summonCats() {
+      for (let i = 0; i < 20; i++) {
+        const spark = document.createElement("div");
+        spark.className = "spark";
+        spark.style.left = Math.random() * window.innerWidth + "px";
+        spark.style.top = Math.random() * window.innerHeight + "px";
+        document.body.appendChild(spark);
+
+        setTimeout(() => spark.remove(), 1000);
+      }
+    }
+  </script>
+
+</body>
+</html>
